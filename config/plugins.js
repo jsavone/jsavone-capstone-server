@@ -3,6 +3,7 @@ const Inert = require('inert');
 const Vision = require('vision');
 const MongoosePlugin = require('../plugins/mongoose.plugin');
 const UserModule = require('../modules/user/user.module');
+const RecipeModule = require('../modules/recipe/recipe.module');
 
 const goodOptions = {
     ops: {
@@ -53,4 +54,5 @@ module.exports = [
         options: goodOptions
     },
     UserModule,
+    RecipeModule,
 ];
