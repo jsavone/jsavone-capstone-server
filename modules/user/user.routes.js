@@ -7,15 +7,10 @@ module.exports = [
         method: 'POST',
         config: {
             handler: UserController.signup,
-            validate: {
-                payload: Joi.object().keys({
-                    email: Joi.string().email().required(),
-                    password: Joi.string().required()
-                })
-            },
             description: 'User can create new Account',
             tags: ['api','Users'],
             notes: 'Returns a signup response',
+            cors: false,
             auth: false
         }
 

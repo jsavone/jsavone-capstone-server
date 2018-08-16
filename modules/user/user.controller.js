@@ -6,18 +6,20 @@ const JwtService = require('../../services/jwt.service');
 module.exports = {
 
     async signup(req, reply) {
-
+      console.log('signup request: ', req.payload)
         try {
 
             const user = new User({
                 email: req.payload.email,
-                password: req.payload.password
+                password: req.payload.password,
+                firstName: req.payload.firstName,
+                lastName: req.payload.lastName
             });
 
             user.password = await UtilService.hashPassword(user.password);
             await user.save();
 
-            return reply.response('Signup successful!');
+            return reply.response(user);
 
         }
         catch(err){
