@@ -4,9 +4,7 @@ const MongoosePlugin ={
     register: function (server, options, next) {
 
         mongoose.Promise = require('bluebird');
-        mongoose.connect(options.mongoDbUri, {
-            useMongoClient: true
-        });
+        mongoose.connect(options.mongoDbUri);
         mongoose.connection.on('connected', () => {
             console.log(`app is connected to ${options.mongoDbUri}`);
         });
