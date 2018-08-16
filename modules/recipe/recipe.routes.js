@@ -19,7 +19,6 @@ module.exports = [
             tags: ['api','Recipes'],
             description: 'Get all the Recipes',
             notes: 'Returns all the Recipes with Ingredients',
-            auth: false
             }
 
 
@@ -29,10 +28,6 @@ module.exports = [
         path: '/recipes',
         method: 'POST',
         config: {
-            validate: {
-                payload: schema,
-                auth: false
-            },
             handler: RecipeController.create,
             description: 'Create new Recipe',
             tags: ['api','Recipes'],

@@ -17,15 +17,15 @@ server.register(plugins, (err) => {
             throw err;
         }
 
-        server.auth.strategy('jwt','jwt',{
-           key: config.secret,
-           verifyOptions:{
-               algorithm: ['HS256']
-           },
-           validateFunc: JwtService.validate
-        });
-
-        server.auth.default('jwt');
+        // server.auth.strategy('jwt','jwt',{
+        //    key: config.secret,
+        //    verifyOptions:{
+        //        algorithm: ['HS256']
+        //    },
+        //    validateFunc: JwtService.validate
+        // });
+        //
+        // server.auth.default('jwt');
 
         console.log(`Server Running at PORT ${server.info.port}`);
     });

@@ -20,4 +20,15 @@ module.exports = [
         }
 
     },
+    {
+    path: '/users/login',
+    method: 'POST',
+    config: {
+        handler: UserController.login,
+        description: 'User can Login to his Account',
+        tags: ['api','Users'],
+        notes: 'Returns a JSON Web Token',
+        auth:false
+    }
+},
 ]
