@@ -20,8 +20,6 @@ module.exports = [
             description: 'Get all the Recipes',
             notes: 'Returns all the Recipes with Ingredients',
             }
-
-
     },
 
     {
