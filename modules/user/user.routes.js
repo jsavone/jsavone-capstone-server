@@ -31,5 +31,20 @@ module.exports = [
         notes: 'Returns a JSON Web Token',
         auth:false
     }
+  },
+    {
+    path: '/users',
+    method: 'GET',
+    config: {
+        handler: UserController.allUsers,
+        cors: {
+         origin: ['*'],
+         credentials: true
+        },
+        description: 'Gets all users',
+        tags: ['api','Users'],
+        notes: 'Returns list of all users',
+        auth:false
+    }
 },
 ]
