@@ -18,8 +18,8 @@ module.exports = {
             const category = await Category.create({
                 category: req.payload.category
             });
-
-            return reply.response(category);
+            const categoryList = await Category.find({})
+            return reply.response(categoryList);
 
         }
         catch (err) {

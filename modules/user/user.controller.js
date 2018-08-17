@@ -61,4 +61,10 @@ module.exports = {
 
         return reply.response(users)
     },
+
+    async currUser (req, reply){
+      const user = await User.findOne({_id: req.params.id})
+
+      return reply.response(user)
+  },
 }

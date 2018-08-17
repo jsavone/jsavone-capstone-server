@@ -6,6 +6,7 @@ module.exports = [
         method: 'GET',
         config: {
             handler: CategoryController.find,
+            cors: { origin: ['*'], credentials: true},
             description:'Find all the Categories',
             tags: ['api','Categories'],
             notes:'Returns all the Categories'
@@ -16,11 +17,7 @@ module.exports = [
         method: 'POST',
         config: {
             handler: CategoryController.create,
-            validate:{
-                payload: Joi.object().keys({
-                    category: Joi.string().required(),
-                })
-            },
+            cors: { origin: ['*'], credentials: true},
             description:'Create new Category',
             tags: ['api','Categories'],
             notes:'Returns newly created Category'

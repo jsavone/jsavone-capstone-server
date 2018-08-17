@@ -25,11 +25,39 @@ module.exports = {
                 cookTime: req.payload.cookTime,
                 servingSize: req.payload.servingSize
             });
-
-            return reply.response(newRecipe)
+            const recipeList = await Recipe.find({})
+            return reply.response(recipeList)
         }
         catch (err) {
             throw Boom.badImplementation('could not create recipe',err);
         }
     },
+
+    async addIngredient (req, reply) {
+
+        try {
+            let recipe = await Recipe.findOne({_id: req.params.recipeId})
+            recipe.ingredients = [...recipe.ingredients, {ingredientId:req.params.ingredientId, quantity: req.payload.quantity}]
+            await recipe.save()
+            return reply.response(recipe)
+            }
+
+        catch (err) {
+            throw Boom.badImplementation('could not create recipe',err);
+        }
+    },
+
+    async addCategory (req, reply) {
+
+        try {
+            let recipe = await Recipe.findOne({_id: req.params.recipeId})
+            recipe.categories = [...recipe.categories, req.params.categoryId]
+            await recipe.save()
+            return reply.response(recipe)
+            }
+
+        catch (err) {
+            throw Boom.badImplementation('could not add category',err);
+        }
+    }
 }
