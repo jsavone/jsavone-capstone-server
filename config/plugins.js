@@ -2,11 +2,11 @@ const HapiSwagger = require('hapi-swagger');
 const Inert = require('inert');
 const Vision = require('vision');
 const MongoosePlugin = require('../plugins/mongoose.plugin');
-const UserModule = require('../modules/user/user.module');
-const RecipeModule = require('../modules/recipe/recipe.module');
 const IngredientModule = require('../modules/ingredient/ingredient.module');
-const CommentModule = require('../modules/comment/comment.module');
 const CategoryModule = require('../modules/category/category.module');
+const CommentModule = require('../modules/comment/comment.module');
+const RecipeModule = require('../modules/recipe/recipe.module');
+const UserModule = require('../modules/user/user.module');
 
 const goodOptions = {
     ops: {
@@ -51,14 +51,14 @@ module.exports = [
             }
         }
     },
-    require('hapi-auth-jwt2'),
+    // require('hapi-auth-jwt2'),
     {
         register: require('good'),
         options: goodOptions
     },
-    UserModule,
-    RecipeModule,
     IngredientModule,
     CategoryModule,
     CommentModule,
+    RecipeModule,
+    UserModule,
 ];

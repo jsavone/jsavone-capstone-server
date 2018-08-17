@@ -5,13 +5,15 @@ module.exports = [
     {
         path: '/users/signup',
         method: 'POST',
+        handler: UserController.signup,
         config: {
-            handler: UserController.signup,
+            cors: {
+             origin: ['*'],
+             credentials: true
+            },
             description: 'User can create new Account',
             tags: ['api','Users'],
             notes: 'Returns a signup response',
-            cors: false,
-            auth: false
         }
 
     },
@@ -20,6 +22,10 @@ module.exports = [
     method: 'POST',
     config: {
         handler: UserController.login,
+        cors: {
+         origin: ['*'],
+         credentials: true
+        },
         description: 'User can Login to his Account',
         tags: ['api','Users'],
         notes: 'Returns a JSON Web Token',

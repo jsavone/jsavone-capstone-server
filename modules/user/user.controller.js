@@ -8,7 +8,6 @@ module.exports = {
     async signup(req, reply) {
       console.log('signup request: ', req.payload)
         try {
-
             const user = new User({
                 email: req.payload.email,
                 password: req.payload.password,
@@ -47,7 +46,7 @@ module.exports = {
            //      expiresIn : '1 day'
            //  });
           // reply.response({token:token});
-              reply.response("logged in!");
+            return reply.response(user);
         }
         else{
             reply(Boom.unauthorized('Invalid credentials provided'));

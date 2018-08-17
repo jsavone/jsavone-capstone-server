@@ -15,6 +15,10 @@ module.exports = [
         path: '/recipes',
         method: 'GET',
         config :{
+            cors: {
+             origin: ['*'],
+             credentials: true
+            },
             handler: RecipeController.find,
             tags: ['api','Recipes'],
             description: 'Get all the Recipes',
