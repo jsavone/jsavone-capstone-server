@@ -7,7 +7,7 @@ const IngredientSchema = new Schema({
         type: String
     },
     unit: String,
-    quantity: {type: Number, default: 0}
+    amount: {type: Number, default: 0}
 });
 
 module.exports = mongoose.model('Ingredient', IngredientSchema);

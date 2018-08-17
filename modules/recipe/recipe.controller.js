@@ -39,7 +39,8 @@ module.exports = {
             let recipe = await Recipe.findOne({_id: req.params.recipeId})
             recipe.ingredients = [...recipe.ingredients, {ingredientId:req.params.ingredientId, quantity: req.payload.quantity}]
             await recipe.save()
-            return reply.response(recipe)
+            let recipes = await Recipe.find({})
+            return reply.response(recipes)
             }
 
         catch (err) {
