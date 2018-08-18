@@ -8,6 +8,9 @@ module.exports = {
         try{
 
             const recipes = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
             return reply.response(recipes);
         }
         catch(err){
@@ -37,7 +40,7 @@ module.exports = {
 
         try {
             let recipe = await Recipe.findOne({_id: req.params.recipeId})
-            recipe.ingredients = [...recipe.ingredients, {ingredientId:req.params.ingredientId, quantity: req.payload.quantity}]
+            recipe.ingredients = [...recipe.ingredients, {ingredientId:req.params.ingredientId, amount: req.params.amount}]
             await recipe.save()
             let recipes = await Recipe.find({})
             return reply.response(recipes)

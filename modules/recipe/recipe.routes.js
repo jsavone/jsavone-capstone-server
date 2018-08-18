@@ -42,7 +42,7 @@ module.exports = [
     },
 
     {
-        path: '/recipes/ingredient/{recipeId}/{ingredientId}',
+        path: '/recipes/ingredient/{recipeId}/{ingredientId}/{amount}',
         method: 'PATCH',
         config: {
             cors: {

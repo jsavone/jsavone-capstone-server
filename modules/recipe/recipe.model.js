@@ -15,7 +15,7 @@ const RecipeSchema = new Schema({
     timesAdded: {type: Number, default: 0},
     ingredients: [{
       ingredientId: {type: Schema.Types.ObjectId, ref: 'Ingredient'},
-      quantity: {type: Number, default: 1}
+      amount: {type: Number, default: 1}
     }],
     categories: [{
       type: Schema.Types.ObjectId,
