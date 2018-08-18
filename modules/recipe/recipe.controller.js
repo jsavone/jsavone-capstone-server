@@ -39,6 +39,31 @@ module.exports = {
         }
     },
 
+    async edit (req, reply) {
+
+        try {
+            const recipe = await Recipe.findOne({_id: req.payload._id})
+
+                recipe.title = req.payload.title
+                recipe.directions = req.payload.directions
+                recipe.img = req.payload.img
+                recipe.video = req.payload.video
+                recipe.cookTime = req.payload.cookTime
+                recipe.servingSize = req.payload.servingSize
+
+                await recipe.save()
+
+            const recipeList = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
+            return reply.response(recipeList)
+        }
+        catch (err) {
+            throw Boom.badImplementation('could not create recipe',err);
+        }
+    },
+
     async addIngredient (req, reply) {
 
         try {
@@ -57,17 +82,61 @@ module.exports = {
         }
     },
 
+    async removeIngredient (req, reply) {
+
+        try {
+            let recipe = await Recipe.findOne({_id: req.params.recipeId})
+            let ingredients = recipe.ingredients.filter(ingredient=> ingredient._id != req.params.ingredientId)
+            recipe.ingredients = [...ingredients]
+            await recipe.save()
+
+            let recipes = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
+            return reply.response(recipes)
+            }
+
+        catch (err) {
+            throw Boom.badImplementation('could not create recipe',err);
+        }
+    },
+
     async addCategory (req, reply) {
 
         try {
             let recipe = await Recipe.findOne({_id: req.params.recipeId})
             recipe.categories = [...recipe.categories, req.params.categoryId]
             await recipe.save()
-            return reply.response(recipe)
+            let recipes = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
+            return reply.response(recipes)
             }
 
         catch (err) {
             throw Boom.badImplementation('could not add category',err);
         }
-    }
+    },
+
+    async removeCategory (req, reply) {
+
+        try {
+            let recipe = await Recipe.findOne({_id: req.params.recipeId})
+            let categories = recipe.categories.filter(category=> category._id != req.params.categoryId)
+            recipe.categories = [...categories]
+            await recipe.save()
+
+            let recipes = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
+            return reply.response(recipes)
+            }
+
+        catch (err) {
+            throw Boom.badImplementation('could not create recipe',err);
+        }
+    },
 }

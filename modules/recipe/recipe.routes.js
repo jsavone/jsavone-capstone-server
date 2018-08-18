@@ -42,6 +42,21 @@ module.exports = [
     },
 
     {
+        path: '/recipes',
+        method: 'PATCH',
+        config: {
+            handler: RecipeController.edit,
+            cors: {
+             origin: ['*'],
+             credentials: true
+            },
+            description: 'Edit existing recipe',
+            tags: ['api','Recipes'],
+            notes: 'Returns new list of recipes'
+        }
+    },
+
+    {
         path: '/recipes/ingredient/{recipeId}/{ingredientId}/{amount}',
         method: 'PATCH',
         config: {
@@ -55,6 +70,22 @@ module.exports = [
             notes: 'Returns newly updated recipe'
         }
     },
+
+    {
+        path: '/recipes/ingredient/remove/{recipeId}/{ingredientId}',
+        method: 'PATCH',
+        config: {
+            cors: {
+             origin: ['*'],
+             credentials: true
+            },
+            handler: RecipeController.removeIngredient,
+            description: 'Remove ingredient from recipe',
+            tags: ['api','Recipes'],
+            notes: 'Returns newly updated recipes'
+        }
+    },
+
     {
         path: '/recipes/categories/{recipeId}/{categoryId}',
         method: 'PATCH',
@@ -67,6 +98,21 @@ module.exports = [
             description: 'Add category to recipe',
             tags: ['api','Categories'],
             notes: 'Returns newly updated recipe'
+        }
+    },
+
+    {
+        path: '/recipes/categories/remove/{recipeId}/{categoryId}',
+        method: 'PATCH',
+        config: {
+            cors: {
+             origin: ['*'],
+             credentials: true
+            },
+            handler: RecipeController.removeCategory,
+            description: 'Remove category from recipe',
+            tags: ['api','Categories'],
+            notes: 'Returns newly updated list of recipes'
         }
     },
 ]
