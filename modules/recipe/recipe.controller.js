@@ -29,6 +29,9 @@ module.exports = {
                 servingSize: req.payload.servingSize
             });
             const recipeList = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
             return reply.response(recipeList)
         }
         catch (err) {
@@ -43,6 +46,9 @@ module.exports = {
             recipe.ingredients = [...recipe.ingredients, {ingredientId:req.params.ingredientId, amount: req.params.amount}]
             await recipe.save()
             let recipes = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
             return reply.response(recipes)
             }
 
