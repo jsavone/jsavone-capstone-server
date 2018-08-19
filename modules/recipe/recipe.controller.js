@@ -43,13 +43,25 @@ module.exports = {
 
         try {
             const recipe = await Recipe.findOne({_id: req.payload._id})
-
-                recipe.title = req.payload.title
-                recipe.directions = req.payload.directions
-                recipe.img = req.payload.img
-                recipe.video = req.payload.video
-                recipe.cookTime = req.payload.cookTime
-                recipe.servingSize = req.payload.servingSize
+            
+                if (req.payload.title !== '') {
+                  recipe.title = req.payload.title
+                }
+                if (req.payload.directions !== '') {
+                  recipe.directions = req.payload.directions
+                }
+                if (req.payload.img !== '') {
+                  recipe.img = req.payload.img
+                }
+                if (req.payload.video !== '') {
+                  recipe.video = req.payload.video
+                }
+                if (req.payload.cookTime !== '') {
+                  recipe.cookTime = req.payload.cookTime
+                }
+                if (req.payload.servingSize !== '') {
+                  recipe.servingSize = req.payload.servingSize
+                }
 
                 await recipe.save()
 
