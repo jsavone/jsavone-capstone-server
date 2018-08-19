@@ -50,4 +50,30 @@ module.exports = [
         auth:false
     }
   },
+
+  {
+    path: '/users/add/{userId}/{meal}/{recipeId}',
+    method: 'PATCH',
+    config: {
+        handler: UserController.addMeal,
+        cors: { origin: ['*'], credentials: true},
+        description: 'Adds recipe to user day',
+        tags: ['api','Users'],
+        notes: 'Returns a user',
+        auth:false
+    }
+  },
+  {
+    path: '/users/remove/{userId}/{meal}/{recipeId}',
+    method: 'PATCH',
+    config: {
+        handler: UserController.removeMeal,
+        cors: { origin: ['*'], credentials: true},
+        description: 'Removes recipe from user day',
+        tags: ['api','Users'],
+        notes: 'Returns a user',
+        auth:false
+    }
+  }
+
 ]

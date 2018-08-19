@@ -67,4 +67,49 @@ module.exports = {
 
       return reply.response(user)
   },
+
+  async addMeal(req, reply) {
+
+      try {
+
+        const user = await User.findById(req.params.userId)
+        user[req.params.meal] = req.params.recipeId
+        await user.save();
+        const updatedUser = await User.findById(req.params.userId)
+        .populate('sundayBfast')
+        .populate('sundayLunch')
+        .populate('sundayDinner')
+        .populate('mondayBfast')
+        .populate('mondayLunch')
+        .populate('mondayDinner')
+          return reply.response(updatedUser)
+
+      }
+      catch(err){
+          throw Boom.badImplementation('Adding Recipe Failed',err);
+      }
+  },
+
+  async removeMeal(req, reply) {
+
+      try {
+
+        const user = await User.findById(req.params.userId)
+        user[req.params.meal] = null
+        await user.save();
+        const updatedUser = await User.findById(req.params.userId)
+        .populate('sundayBfast')
+        .populate('sundayLunch')
+        .populate('sundayDinner')
+        .populate('mondayBfast')
+        .populate('mondayLunch')
+        .populate('mondayDinner')
+          return reply.response(updatedUser)
+
+      }
+      catch(err){
+          throw Boom.badImplementation('Removing Recipe Failed',err);
+      }
+  },
+
 }

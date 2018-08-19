@@ -15,7 +15,35 @@ const UserSchema = new Schema({
       required:true
   },
   firstName: String,
-  lastName: String
+  lastName: String,
+  admin: {
+    type: Boolean,
+    default: false,
+  },
+  sundayBfast: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  sundayLunch: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  sundayDinner: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  mondayBfast: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  mondayLunch: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  mondayDinner: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
 });
 
 
