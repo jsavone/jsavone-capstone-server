@@ -44,6 +44,66 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Recipe'
   },
+  tuesdayBfast: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  tuesdayLunch: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  tuesdayDinner: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  wednesdayBfast: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  wednesdayLunch: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  wednesdayDinner: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  thursdayBfast: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  thursdayLunch: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  thursdayDinner: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  fridayBfast: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  fridayLunch: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  fridayDinner: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  saturdayBfast: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  saturdayLunch: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
+  saturdayDinner: {
+    type: Schema.Types.ObjectId,
+    ref: 'Recipe'
+  },
 });
 
 

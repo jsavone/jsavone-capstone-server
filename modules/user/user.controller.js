@@ -58,6 +58,27 @@ module.exports = {
     },
       async allUsers(req, reply){
         const users = await User.find({})
+        .populate('sundayBfast')
+        .populate('sundayLunch')
+        .populate('sundayDinner')
+        .populate('mondayBfast')
+        .populate('mondayLunch')
+        .populate('mondayDinner')
+        .populate('tuesdayBfast')
+        .populate('tuesdayLunch')
+        .populate('tuesdayDinner')
+        .populate('wednesdayBfast')
+        .populate('wednesdayLunch')
+        .populate('wednesdayDinner')
+        .populate('thursdayBfast')
+        .populate('thursdayLunch')
+        .populate('thursdayDinner')
+        .populate('fridayBfast')
+        .populate('fridayLunch')
+        .populate('fridayDinner')
+        .populate('saturdayBfast')
+        .populate('saturdayLunch')
+        .populate('saturdayDinner')
 
         return reply.response(users)
     },
@@ -82,6 +103,21 @@ module.exports = {
         .populate('mondayBfast')
         .populate('mondayLunch')
         .populate('mondayDinner')
+        .populate('tuesdayBfast')
+        .populate('tuesdayLunch')
+        .populate('tuesdayDinner')
+        .populate('wednesdayBfast')
+        .populate('wednesdayLunch')
+        .populate('wednesdayDinner')
+        .populate('thursdayBfast')
+        .populate('thursdayLunch')
+        .populate('thursdayDinner')
+        .populate('fridayBfast')
+        .populate('fridayLunch')
+        .populate('fridayDinner')
+        .populate('saturdayBfast')
+        .populate('saturdayLunch')
+        .populate('saturdayDinner')
           return reply.response(updatedUser)
 
       }
@@ -95,7 +131,7 @@ module.exports = {
       try {
 
         const user = await User.findById(req.params.userId)
-        user[req.params.meal] = null
+        user[req.params.meal] = undefined
         await user.save();
         const updatedUser = await User.findById(req.params.userId)
         .populate('sundayBfast')
@@ -104,6 +140,21 @@ module.exports = {
         .populate('mondayBfast')
         .populate('mondayLunch')
         .populate('mondayDinner')
+        .populate('tuesdayBfast')
+        .populate('tuesdayLunch')
+        .populate('tuesdayDinner')
+        .populate('wednesdayBfast')
+        .populate('wednesdayLunch')
+        .populate('wednesdayDinner')
+        .populate('thursdayBfast')
+        .populate('thursdayLunch')
+        .populate('thursdayDinner')
+        .populate('fridayBfast')
+        .populate('fridayLunch')
+        .populate('fridayDinner')
+        .populate('saturdayBfast')
+        .populate('saturdayLunch')
+        .populate('saturdayDinner')
           return reply.response(updatedUser)
 
       }
