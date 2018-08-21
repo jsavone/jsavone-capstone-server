@@ -11,6 +11,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
+              .populate('comments')
             return reply.response(recipes);
         }
         catch(err){
@@ -32,6 +33,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
+              .populate('comments')
             return reply.response(recipeList)
         }
         catch (err) {
@@ -43,7 +45,7 @@ module.exports = {
 
         try {
             const recipe = await Recipe.findOne({_id: req.payload._id})
-            
+
                 if (req.payload.title !== '') {
                   recipe.title = req.payload.title
                 }
@@ -69,6 +71,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
+              .populate('comments')
             return reply.response(recipeList)
         }
         catch (err) {
@@ -86,6 +89,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
+              .populate('comments')
             return reply.response(recipes)
             }
 
@@ -106,6 +110,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
+              .populate('comments')
             return reply.response(recipes)
             }
 
@@ -124,6 +129,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
+              .populate('comments')
             return reply.response(recipes)
             }
 
@@ -144,6 +150,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
+              .populate('comments')
             return reply.response(recipes)
             }
 

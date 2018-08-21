@@ -24,7 +24,33 @@ module.exports = {
             _recipe.comments = [..._recipe.comments, comment];
             await _recipe.save();
 
-            return reply.response(comment);
+            let recipes = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
+              .populate('comments')
+            return reply.response(recipes)
+        }
+        catch (err) {
+            throw err;
+        }
+    },
+    async remove(req, reply) {
+      // need to finish this route!
+        try {
+            await Comment.findByIdAndRemove(req.params.commentId)
+
+            const _recipe = await Recipe.findById(req.params.recipeId);
+            const filteredRecipe = _recipe.comments.filter(comment=> comment._id !== req.params.commentId)
+            _recipe.comments = [...filteredRecipe];
+            await _recipe.save();
+
+            let recipes = await Recipe.find({})
+              .populate('comments')
+              .populate('ingredients.ingredientId')
+              .populate('categories')
+              .populate('comments')
+            return reply.response(recipes)
         }
         catch (err) {
             throw err;

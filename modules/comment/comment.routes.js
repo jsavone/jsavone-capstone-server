@@ -25,4 +25,16 @@ module.exports = [
       }
   },
 
+  {
+      path: '/comments/remove/{recipeId}/{commentId}',
+      method: 'DELETE',
+      config: {
+          handler: CommentController.remove,
+          cors: { origin: ['*'], credentials: true},
+          tags: ['api','Comments'],
+          description:'Delete comment',
+          notes: 'Returns recipes without the deleted comment'
+      }
+  },
+
 ];

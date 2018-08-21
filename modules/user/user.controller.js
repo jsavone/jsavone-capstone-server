@@ -155,6 +155,7 @@ module.exports = {
         .populate('saturdayBfast')
         .populate('saturdayLunch')
         .populate('saturdayDinner')
+
           return reply.response(updatedUser)
 
       }
