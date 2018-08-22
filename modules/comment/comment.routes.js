@@ -10,6 +10,7 @@ module.exports = [
           tags: ['api','Comments'],
           description: 'Find all Comments',
           notes: 'Returns all Comments',
+          auth: false,
       }
   },
 
@@ -21,7 +22,8 @@ module.exports = [
           cors: { origin: ['*'], credentials: true},
           tags: ['api','Comments'],
           description:'Create new Comment',
-          notes: 'Returns newly created Comment'
+          notes: 'Returns newly created Comment',
+          auth: false,
       }
   },
 
@@ -33,7 +35,8 @@ module.exports = [
           cors: { origin: ['*'], credentials: true},
           tags: ['api','Comments'],
           description:'Delete comment',
-          notes: 'Returns recipes without the deleted comment'
+          notes: 'Returns recipes without the deleted comment',
+          auth: false,
       }
   },
 

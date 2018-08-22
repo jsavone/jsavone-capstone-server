@@ -15,6 +15,7 @@ module.exports = [
         path: '/recipes',
         method: 'GET',
         config :{
+            auth: false,
             cors: {
              origin: ['*'],
              credentials: true
@@ -35,6 +36,7 @@ module.exports = [
              origin: ['*'],
              credentials: true
             },
+            auth: false,
             description: 'Create new Recipe',
             tags: ['api','Recipes'],
             notes: 'Returns newly created Recipe'
@@ -50,6 +52,7 @@ module.exports = [
              origin: ['*'],
              credentials: true
             },
+            auth: false,
             description: 'Edit existing recipe',
             tags: ['api','Recipes'],
             notes: 'Returns new list of recipes'
@@ -64,6 +67,7 @@ module.exports = [
              origin: ['*'],
              credentials: true
             },
+            auth: false,
             handler: RecipeController.addIngredient,
             description: 'Add igredient to recipe',
             tags: ['api','Recipes'],
@@ -79,6 +83,7 @@ module.exports = [
              origin: ['*'],
              credentials: true
             },
+            auth: false,
             handler: RecipeController.removeIngredient,
             description: 'Remove ingredient from recipe',
             tags: ['api','Recipes'],
@@ -94,6 +99,7 @@ module.exports = [
              origin: ['*'],
              credentials: true
             },
+            auth: false,
             handler: RecipeController.addCategory,
             description: 'Add category to recipe',
             tags: ['api','Categories'],
@@ -109,6 +115,7 @@ module.exports = [
              origin: ['*'],
              credentials: true
             },
+            auth: false,
             handler: RecipeController.removeCategory,
             description: 'Remove category from recipe',
             tags: ['api','Categories'],

@@ -36,7 +36,7 @@ module.exports = {
         }
     },
     async remove(req, reply) {
-      // need to finish this route!
+
         try {
             await Comment.findByIdAndRemove(req.params.commentId)
 

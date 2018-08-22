@@ -9,7 +9,8 @@ module.exports = [
             cors: { origin: ['*'], credentials: true},
             description:'Find all the Categories',
             tags: ['api','Categories'],
-            notes:'Returns all the Categories'
+            notes:'Returns all the Categories',
+            auth: false,
         }
     },
     {
@@ -20,7 +21,8 @@ module.exports = [
             cors: { origin: ['*'], credentials: true},
             description:'Create new Category',
             tags: ['api','Categories'],
-            notes:'Returns newly created Category'
+            notes:'Returns newly created Category',
+            auth: false,
         }
     }
 ];

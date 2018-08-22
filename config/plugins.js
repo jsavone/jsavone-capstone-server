@@ -1,6 +1,7 @@
 const HapiSwagger = require('hapi-swagger');
 const Inert = require('inert');
 const Vision = require('vision');
+const AuthPlugin = require('../plugins/jwt.plugin');
 const MongoosePlugin = require('../plugins/mongoose.plugin');
 const IngredientModule = require('../modules/ingredient/ingredient.module');
 const CategoryModule = require('../modules/category/category.module');
@@ -35,6 +36,9 @@ const goodOptions = {
 
 module.exports = [
     {
+      register: require('hapi-auth-jwt2')
+    },
+    {
         register: MongoosePlugin,
         options: {
             mongoDbUri: 'mongodb://127.0.0.1/preptastic'
@@ -51,10 +55,12 @@ module.exports = [
             }
         }
     },
-    // require('hapi-auth-jwt2'),
     {
         register: require('good'),
         options: goodOptions
+    },
+    {
+      register: AuthPlugin
     },
     IngredientModule,
     CategoryModule,

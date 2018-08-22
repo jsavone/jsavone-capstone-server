@@ -38,15 +38,15 @@ module.exports = {
 
        const matched = await UtilService.comparePassword(req.payload.password, user.password);
         if(matched){
-           // const token = JwtService.issue({
-           //      payload:{
-           //          id: user._id,
-           //          email: user.email
-           //      },
-           //      expiresIn : '1 day'
-           //  });
-          // reply.response({token:token});
-            return reply.response(user);
+           const token = JwtService.issue({
+                payload:{
+                    id: user._id,
+                    email: user.email
+                },
+                expiresIn : '1 day'
+            });
+          return reply.response({token:token});
+            // return reply.response(user);
         }
         else{
             reply(Boom.unauthorized('Invalid credentials provided'));

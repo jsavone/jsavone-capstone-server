@@ -15,7 +15,8 @@ module.exports = [
         handler: IngredientController.create,
         description: 'Create new Ingredient',
         tags: ['api','Ingredients'],
-        notes: 'Returns newly created Ingredient'
+        notes: 'Returns newly created Ingredient',
+        auth: false,
     }
   },
 
@@ -28,6 +29,7 @@ module.exports = [
         tags: ['api','Companies'],
         description: 'Find all the Ingredients',
         notes: 'Returns all the Ingredients',
+        auth: false,
         }
   },
 
@@ -39,7 +41,8 @@ module.exports = [
         handler: IngredientController.findOne,
         tags: ['api','Ingredients'],
         description: 'Find Ingredient By Id',
-        notes: 'Returns a single Ingredient'
+        notes: 'Returns a single Ingredient',
+        auth: false,
     }
   },
 
@@ -51,7 +54,8 @@ module.exports = [
         handler: IngredientController.delete,
         tags: ['api','Ingredients'],
         description: 'Delete Ingredient By Id',
-        notes: 'Returns a deleted ingredient'
+        notes: 'Returns a deleted ingredient',
+        auth: false,
     }
   },
 
@@ -63,7 +67,8 @@ module.exports = [
         handler: IngredientController.update,
         tags: ['api','Ingredients'],
         description: 'Update Ingredient By Id',
-        notes: 'Returns a updated Ingredient'
+        notes: 'Returns a updated Ingredient',
+        auth: false,
 
     }
   }
