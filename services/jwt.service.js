@@ -5,7 +5,6 @@ const config = require('../config/development');
 module.exports = {
 
     issue(options) {
-
         let {payload, expiresIn} = options;
         return jwt.sign(payload, config.secret, {
             expiresIn: expiresIn
@@ -13,9 +12,8 @@ module.exports = {
 
     },
     validate(decodedToken, request, callback) {
-
         User.findOne({
-            _id: decodedToken.id,
+            _id: decodedToken._id,
             email: decodedToken.email
         }, (err, _user) => {
             if (err || !_user) {

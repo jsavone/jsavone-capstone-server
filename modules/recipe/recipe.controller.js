@@ -4,9 +4,7 @@ const Boom = require('boom')
 module.exports = {
 
     async find(req, reply) {
-
         try{
-
             const recipes = await Recipe.find({})
               .populate('comments')
               .populate('ingredients.ingredientId')

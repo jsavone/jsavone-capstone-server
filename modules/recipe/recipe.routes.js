@@ -15,7 +15,7 @@ module.exports = [
         path: '/recipes',
         method: 'GET',
         config :{
-            auth: false,
+            auth: 'jwt',
             cors: {
              origin: ['*'],
              credentials: true

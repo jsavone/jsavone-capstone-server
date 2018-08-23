@@ -6,7 +6,6 @@ const JwtService = require('../../services/jwt.service');
 module.exports = {
 
     async signup(req, reply) {
-      console.log('signup request: ', req.payload)
         try {
             const user = new User({
                 email: req.payload.email,
@@ -40,8 +39,9 @@ module.exports = {
         if(matched){
            const token = JwtService.issue({
                 payload:{
-                    id: user._id,
-                    email: user.email
+                    _id: user._id,
+                    email: user.email,
+                    isAdmin: user.admin,
                 },
                 expiresIn : '1 day'
             });
@@ -85,6 +85,27 @@ module.exports = {
 
     async currUser (req, reply){
       const user = await User.findOne({_id: req.params.id})
+        .populate('sundayBfast')
+        .populate('sundayLunch')
+        .populate('sundayDinner')
+        .populate('mondayBfast')
+        .populate('mondayLunch')
+        .populate('mondayDinner')
+        .populate('tuesdayBfast')
+        .populate('tuesdayLunch')
+        .populate('tuesdayDinner')
+        .populate('wednesdayBfast')
+        .populate('wednesdayLunch')
+        .populate('wednesdayDinner')
+        .populate('thursdayBfast')
+        .populate('thursdayLunch')
+        .populate('thursdayDinner')
+        .populate('fridayBfast')
+        .populate('fridayLunch')
+        .populate('fridayDinner')
+        .populate('saturdayBfast')
+        .populate('saturdayLunch')
+        .populate('saturdayDinner')
 
       return reply.response(user)
   },
@@ -118,7 +139,7 @@ module.exports = {
         .populate('saturdayBfast')
         .populate('saturdayLunch')
         .populate('saturdayDinner')
-          return reply.response(updatedUser)
+          return reply.response(updatedUser, req.params.meal)
 
       }
       catch(err){

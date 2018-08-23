@@ -11,6 +11,7 @@ module.exports = [
         description: 'User can create new Account',
         tags: ['api','Users'],
         notes: 'Returns a signup response',
+        auth: false,
     }
 
   },
@@ -35,7 +36,7 @@ module.exports = [
         description: 'Gets all users',
         tags: ['api','Users'],
         notes: 'Returns list of all users',
-        auth:false
+        auth:'jwt'
     }
   },
   {
@@ -47,7 +48,7 @@ module.exports = [
         description: 'Gets one user',
         tags: ['api','Users'],
         notes: 'Returns one user',
-        auth:false
+        auth: 'jwt'
     }
   },
 
@@ -60,7 +61,7 @@ module.exports = [
         description: 'Adds recipe to user day',
         tags: ['api','Users'],
         notes: 'Returns a user',
-        auth:false
+        auth: 'jwt'
     }
   },
   {
@@ -72,7 +73,7 @@ module.exports = [
         description: 'Removes recipe from user day',
         tags: ['api','Users'],
         notes: 'Returns a user',
-        auth:false
+        auth: 'jwt'
     }
   }
 

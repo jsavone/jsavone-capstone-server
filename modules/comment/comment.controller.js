@@ -5,7 +5,8 @@ module.exports = {
     async find(req, reply) {
         try {
             const comments = await Comment.find({})
-                .populate('recipe');
+                .populate('recipe')
+                .populate('user')
             reply.response(comments);
         } catch (err) {
             throw err;
@@ -24,12 +25,10 @@ module.exports = {
             _recipe.comments = [..._recipe.comments, comment];
             await _recipe.save();
 
-            let recipes = await Recipe.find({})
-              .populate('comments')
-              .populate('ingredients.ingredientId')
-              .populate('categories')
-              .populate('comments')
-            return reply.response(recipes)
+            let comments = await Comment.find({})
+              .populate('recipe')
+              .populate('user')
+            return reply.response(comments)
         }
         catch (err) {
             throw err;
