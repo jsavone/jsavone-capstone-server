@@ -16,10 +16,7 @@ module.exports = [
         method: 'GET',
         config :{
             auth: 'jwt',
-            cors: {
-             origin: ['*'],
-             credentials: true
-            },
+            cors: {origin: ['*'], credentials: true},
             handler: RecipeController.find,
             tags: ['api','Recipes'],
             description: 'Get all the Recipes',
@@ -32,11 +29,8 @@ module.exports = [
         method: 'POST',
         config: {
             handler: RecipeController.create,
-            cors: {
-             origin: ['*'],
-             credentials: true
-            },
-            auth: false,
+            cors: {origin: ['*'], credentials: true},
+            auth: 'jwt',
             description: 'Create new Recipe',
             tags: ['api','Recipes'],
             notes: 'Returns newly created Recipe'
@@ -48,11 +42,8 @@ module.exports = [
         method: 'PATCH',
         config: {
             handler: RecipeController.edit,
-            cors: {
-             origin: ['*'],
-             credentials: true
-            },
-            auth: false,
+            cors: {origin: ['*'], credentials: true},
+            auth: 'jwt',
             description: 'Edit existing recipe',
             tags: ['api','Recipes'],
             notes: 'Returns new list of recipes'
@@ -63,11 +54,8 @@ module.exports = [
         path: '/recipes/ingredient/{recipeId}/{ingredientId}/{amount}',
         method: 'PATCH',
         config: {
-            cors: {
-             origin: ['*'],
-             credentials: true
-            },
-            auth: false,
+            cors: {origin: ['*'], credentials: true},
+            auth: 'jwt',
             handler: RecipeController.addIngredient,
             description: 'Add igredient to recipe',
             tags: ['api','Recipes'],
@@ -79,11 +67,8 @@ module.exports = [
         path: '/recipes/ingredient/remove/{recipeId}/{ingredientId}',
         method: 'PATCH',
         config: {
-            cors: {
-             origin: ['*'],
-             credentials: true
-            },
-            auth: false,
+            cors: {origin: ['*'], credentials: true},
+            auth: 'jwt',
             handler: RecipeController.removeIngredient,
             description: 'Remove ingredient from recipe',
             tags: ['api','Recipes'],
@@ -95,11 +80,8 @@ module.exports = [
         path: '/recipes/categories/{recipeId}/{categoryId}',
         method: 'PATCH',
         config: {
-            cors: {
-             origin: ['*'],
-             credentials: true
-            },
-            auth: false,
+            cors: {origin: ['*'], credentials: true},
+            auth: 'jwt',
             handler: RecipeController.addCategory,
             description: 'Add category to recipe',
             tags: ['api','Categories'],
@@ -111,11 +93,8 @@ module.exports = [
         path: '/recipes/categories/remove/{recipeId}/{categoryId}',
         method: 'PATCH',
         config: {
-            cors: {
-             origin: ['*'],
-             credentials: true
-            },
-            auth: false,
+            cors: {origin: ['*'], credentials: true},
+            auth: 'jwt',
             handler: RecipeController.removeCategory,
             description: 'Remove category from recipe',
             tags: ['api','Categories'],

@@ -16,7 +16,7 @@ module.exports = [
         description: 'Create new Ingredient',
         tags: ['api','Ingredients'],
         notes: 'Returns newly created Ingredient',
-        auth: false,
+        auth: 'jwt',
     }
   },
 
@@ -29,7 +29,7 @@ module.exports = [
         tags: ['api','Companies'],
         description: 'Find all the Ingredients',
         notes: 'Returns all the Ingredients',
-        auth: false,
+        auth: 'jwt',
         }
   },
 
@@ -42,7 +42,7 @@ module.exports = [
         tags: ['api','Ingredients'],
         description: 'Find Ingredient By Id',
         notes: 'Returns a single Ingredient',
-        auth: false,
+        auth: 'jwt',
     }
   },
 
@@ -55,7 +55,7 @@ module.exports = [
         tags: ['api','Ingredients'],
         description: 'Delete Ingredient By Id',
         notes: 'Returns a deleted ingredient',
-        auth: false,
+        auth: 'jwt',
     }
   },
 
@@ -68,7 +68,7 @@ module.exports = [
         tags: ['api','Ingredients'],
         description: 'Update Ingredient By Id',
         notes: 'Returns a updated Ingredient',
-        auth: false,
+        auth: 'jwt',
 
     }
   }

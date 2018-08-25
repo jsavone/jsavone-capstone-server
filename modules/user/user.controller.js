@@ -7,6 +7,10 @@ module.exports = {
 
     async signup(req, reply) {
         try {
+            const tryUser = await User.findOne({email: req.payload.email})
+            if(tryUser!== null) {
+              return reply.response({error: 'USER ALREADY EXISTS'})
+            }
             const user = new User({
                 email: req.payload.email,
                 password: req.payload.password,
@@ -17,12 +21,14 @@ module.exports = {
             user.password = await UtilService.hashPassword(user.password);
             await user.save();
 
-            return reply.response(user);
+            return reply.response({...user, success: "USER CREATED - PLEASE LOG IN"});
 
         }
         catch(err){
+            return reply.response({error: 'Invalid User!'})
             throw Boom.badImplementation('Signup Failed',err);
         }
+
     },
 
     async login(req, reply){
@@ -45,7 +51,7 @@ module.exports = {
                 },
                 expiresIn : '1 day'
             });
-          return reply.response({token:token});
+          return reply.response({token:token}).code(200);
             // return reply.response(user);
         }
         else{

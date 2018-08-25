@@ -10,7 +10,7 @@ module.exports = [
             description:'Find all the Categories',
             tags: ['api','Categories'],
             notes:'Returns all the Categories',
-            auth: false,
+            auth: 'jwt',
         }
     },
     {
@@ -22,7 +22,7 @@ module.exports = [
             description:'Create new Category',
             tags: ['api','Categories'],
             notes:'Returns newly created Category',
-            auth: false,
+            auth: 'jwt',
         }
     }
 ];

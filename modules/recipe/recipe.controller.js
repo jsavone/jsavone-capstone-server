@@ -80,9 +80,13 @@ module.exports = {
     async addIngredient (req, reply) {
 
         try {
-            let recipe = await Recipe.findOne({_id: req.params.recipeId})
-            recipe.ingredients = [...recipe.ingredients, {ingredientId:req.params.ingredientId, amount: req.params.amount}]
-            await recipe.save()
+            let recipe = await Recipe.findOne({_id: req.params.recipeId}).populate('ingredients.ingredientId')
+
+            if (recipe.ingredients.filter(ing=> ing.ingredientId._id == req.params.ingredientId).length < 1) {
+              recipe.ingredients = [...recipe.ingredients, {ingredientId:req.params.ingredientId, amount: req.params.amount}]
+              await recipe.save()
+            }
+
             let recipes = await Recipe.find({})
               .populate('comments')
               .populate('ingredients.ingredientId')
@@ -120,16 +124,20 @@ module.exports = {
     async addCategory (req, reply) {
 
         try {
-            let recipe = await Recipe.findOne({_id: req.params.recipeId})
-            recipe.categories = [...recipe.categories, req.params.categoryId]
-            await recipe.save()
-            let recipes = await Recipe.find({})
-              .populate('comments')
-              .populate('ingredients.ingredientId')
-              .populate('categories')
-              .populate('comments')
-            return reply.response(recipes)
+            let recipe = await Recipe.findOne({_id: req.params.recipeId}).populate('categories')
+            console.log("Had category? ", )
+            if (recipe.categories.filter(cat=> cat._id == req.params.categoryId).length < 1) {
+              recipe.categories = [...recipe.categories, req.params.categoryId]
+              await recipe.save()
+              }
+              let recipes = await Recipe.find({})
+                .populate('comments')
+                .populate('ingredients.ingredientId')
+                .populate('categories')
+                .populate('comments')
+              return reply.response(recipes)
             }
+
 
         catch (err) {
             throw Boom.badImplementation('could not add category',err);
