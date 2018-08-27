@@ -1,4 +1,5 @@
 const commentRoutes = require('./comment.routes');
+
 const CommentModule = {
     register: (server, options, next) => {
 

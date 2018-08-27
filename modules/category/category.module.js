@@ -1,4 +1,5 @@
 const categoryRoutes = require('./category.routes');
+
 const CategoryModule = {
     register: (server, options, next) => {
 

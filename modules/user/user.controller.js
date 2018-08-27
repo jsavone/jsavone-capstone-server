@@ -8,9 +8,11 @@ module.exports = {
     async signup(req, reply) {
         try {
             const tryUser = await User.findOne({email: req.payload.email})
+
             if(tryUser!== null) {
               return reply.response({error: 'USER ALREADY EXISTS'})
             }
+
             const user = new User({
                 email: req.payload.email,
                 password: req.payload.password,
@@ -26,9 +28,7 @@ module.exports = {
         }
         catch(err){
             return reply.response({error: 'Invalid User!'})
-            throw Boom.badImplementation('Signup Failed',err);
         }
-
     },
 
     async login(req, reply){
@@ -52,7 +52,6 @@ module.exports = {
                 expiresIn : '1 day'
             });
           return reply.response({token:token}).code(200);
-            // return reply.response(user);
         }
         else{
             reply(Boom.unauthorized('Invalid credentials provided'));

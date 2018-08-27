@@ -14,6 +14,7 @@ const UserSchema = new Schema({
       type: String,
       required:true
   },
+
   firstName: String,
   lastName: String,
   admin: {
@@ -105,6 +106,5 @@ const UserSchema = new Schema({
     ref: 'Recipe'
   },
 });
-
 
 module.exports = mongoose.model('User', UserSchema);

@@ -1,4 +1,5 @@
 const Category = require('./category.model');
+
 module.exports = {
 
     async find(req, reply) {
@@ -13,7 +14,6 @@ module.exports = {
     },
 
     async create(req, reply) {
-
         try {
             const category = await Category.create({
                 category: req.payload.category

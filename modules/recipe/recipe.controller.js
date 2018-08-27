@@ -16,6 +16,7 @@ module.exports = {
             throw err;
         }
     },
+
     async create (req, reply) {
 
         try {
@@ -70,6 +71,7 @@ module.exports = {
               .populate('ingredients.ingredientId')
               .populate('categories')
               .populate('comments')
+
             return reply.response(recipeList)
         }
         catch (err) {
@@ -92,6 +94,7 @@ module.exports = {
               .populate('ingredients.ingredientId')
               .populate('categories')
               .populate('comments')
+
             return reply.response(recipes)
             }
 
@@ -113,6 +116,7 @@ module.exports = {
               .populate('ingredients.ingredientId')
               .populate('categories')
               .populate('comments')
+
             return reply.response(recipes)
             }
 
@@ -125,11 +129,15 @@ module.exports = {
 
         try {
             let recipe = await Recipe.findOne({_id: req.params.recipeId}).populate('categories')
-            console.log("Had category? ", )
+
             if (recipe.categories.filter(cat=> cat._id == req.params.categoryId).length < 1) {
+
               recipe.categories = [...recipe.categories, req.params.categoryId]
+
               await recipe.save()
+
               }
+
               let recipes = await Recipe.find({})
                 .populate('comments')
                 .populate('ingredients.ingredientId')
@@ -149,7 +157,9 @@ module.exports = {
         try {
             let recipe = await Recipe.findOne({_id: req.params.recipeId})
             let categories = recipe.categories.filter(category=> category._id != req.params.categoryId)
+
             recipe.categories = [...categories]
+
             await recipe.save()
 
             let recipes = await Recipe.find({})
@@ -157,6 +167,7 @@ module.exports = {
               .populate('ingredients.ingredientId')
               .populate('categories')
               .populate('comments')
+              
             return reply.response(recipes)
             }
 

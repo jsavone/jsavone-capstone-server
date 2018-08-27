@@ -12,7 +12,6 @@ const RecipeSchema = new Schema({
     video: String,
     cookTime: String,
     servingSize: Number,
-    timesAdded: {type: Number, default: 0},
     ingredients: [{
       ingredientId: {type: Schema.Types.ObjectId, ref: 'Ingredient'},
       amount: {type: Number, default: 1}

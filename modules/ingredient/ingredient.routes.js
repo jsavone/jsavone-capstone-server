@@ -1,18 +1,12 @@
 const IngredientController = require('./ingredient.controller');
-const Joi = require('joi');
-
-const schema = Joi.object().keys({
-    name: Joi.string().required(),
-    unit: Joi.string().required(),
-});
 
 module.exports = [
   {
     path: '/ingredients',
     method: 'POST',
+    handler: IngredientController.create,
     config: {
         cors: { origin: ['*'], credentials: true},
-        handler: IngredientController.create,
         description: 'Create new Ingredient',
         tags: ['api','Ingredients'],
         notes: 'Returns newly created Ingredient',
@@ -23,22 +17,22 @@ module.exports = [
   {
     path: '/ingredients',
     method: 'GET',
+    handler: IngredientController.find,
     config: {
         cors: { origin: ['*'], credentials: true},
-        handler: IngredientController.find,
         tags: ['api','Companies'],
         description: 'Find all the Ingredients',
         notes: 'Returns all the Ingredients',
         auth: 'jwt',
-        }
+    }
   },
 
   {
     path: '/ingredients/{id}',
     method: 'GET',
+    handler: IngredientController.findOne,
     config: {
         cors: { origin: ['*'], credentials: true},
-        handler: IngredientController.findOne,
         tags: ['api','Ingredients'],
         description: 'Find Ingredient By Id',
         notes: 'Returns a single Ingredient',
@@ -49,9 +43,9 @@ module.exports = [
   {
     path: '/ingredients/{id}',
     method: 'DELETE',
+    handler: IngredientController.delete,
     config: {
         cors: { origin: ['*'], credentials: true},
-        handler: IngredientController.delete,
         tags: ['api','Ingredients'],
         description: 'Delete Ingredient By Id',
         notes: 'Returns a deleted ingredient',
@@ -62,14 +56,13 @@ module.exports = [
   {
     path: '/ingredients/{id}',
     method: 'PUT',
+    handler: IngredientController.update,
     config: {
         cors: { origin: ['*'], credentials: true},
-        handler: IngredientController.update,
         tags: ['api','Ingredients'],
         description: 'Update Ingredient By Id',
         notes: 'Returns a updated Ingredient',
         auth: 'jwt',
-
     }
   }
 ];

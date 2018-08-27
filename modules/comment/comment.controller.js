@@ -1,5 +1,6 @@
 const Comment = require('./comment.model');
 const Recipe = require('../recipe/recipe.model');
+
 module.exports = {
 
     async find(req, reply) {
@@ -12,6 +13,7 @@ module.exports = {
             throw err;
         }
     },
+
     async create(req, reply) {
 
         try {
@@ -34,6 +36,7 @@ module.exports = {
             throw err;
         }
     },
+
     async remove(req, reply) {
 
         try {

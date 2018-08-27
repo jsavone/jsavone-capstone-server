@@ -66,9 +66,11 @@ module.exports = {
   delete(req, reply) {
 
       Ingredient.findByIdAndRemove(req.params.id, (err, result) => {
+
           if (err) {
               return reply(err).code(500);
           }
+
           return reply.response({msg: `ingredient has deleted with id ${req.params.id}`});
       })
   }

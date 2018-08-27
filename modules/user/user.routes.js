@@ -2,6 +2,7 @@ const UserController = require('./user.controller');
 const Joi = require('joi');
 
 module.exports = [
+
   {
     path: '/users/signup',
     method: 'POST',
@@ -13,13 +14,13 @@ module.exports = [
         notes: 'Returns a signup response',
         auth: false,
     }
-
   },
+
   {
     path: '/users/login',
     method: 'POST',
+    handler: UserController.login,
     config: {
-        handler: UserController.login,
         cors: { origin: ['*'], credentials: true},
         description: 'User can Login to his Account',
         tags: ['api','Users'],
@@ -27,11 +28,12 @@ module.exports = [
         auth:false
     }
   },
+
   {
     path: '/users',
     method: 'GET',
+    handler: UserController.allUsers,
     config: {
-        handler: UserController.allUsers,
         cors: { origin: ['*'], credentials: true},
         description: 'Gets all users',
         tags: ['api','Users'],
@@ -39,11 +41,12 @@ module.exports = [
         auth:'jwt'
     }
   },
+
   {
     path: '/users/{id}',
     method: 'GET',
+    handler: UserController.currUser,
     config: {
-        handler: UserController.currUser,
         cors: { origin: ['*'], credentials: true},
         description: 'Gets one user',
         tags: ['api','Users'],
@@ -55,8 +58,8 @@ module.exports = [
   {
     path: '/users/add/{userId}/{meal}/{recipeId}',
     method: 'PATCH',
+    handler: UserController.addMeal,
     config: {
-        handler: UserController.addMeal,
         cors: { origin: ['*'], credentials: true},
         description: 'Adds recipe to user day',
         tags: ['api','Users'],
@@ -64,11 +67,12 @@ module.exports = [
         auth: 'jwt'
     }
   },
+
   {
     path: '/users/remove/{userId}/{meal}/{recipeId}',
     method: 'PATCH',
+    handler: UserController.removeMeal,
     config: {
-        handler: UserController.removeMeal,
         cors: { origin: ['*'], credentials: true},
         description: 'Removes recipe from user day',
         tags: ['api','Users'],

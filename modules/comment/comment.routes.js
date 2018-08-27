@@ -1,11 +1,11 @@
 const CommentController = require('./comment.controller');
-const Joi = require('joi');
+
 module.exports = [
   {
       path: '/comments',
       method: 'GET',
+      handler: CommentController.find,
       config: {
-          handler: CommentController.find,
           cors: { origin: ['*'], credentials: true},
           tags: ['api','Comments'],
           description: 'Find all Comments',
@@ -17,8 +17,8 @@ module.exports = [
   {
       path: '/comments',
       method: 'POST',
+      handler: CommentController.create,
       config: {
-          handler: CommentController.create,
           cors: { origin: ['*'], credentials: true},
           tags: ['api','Comments'],
           description:'Create new Comment',
@@ -30,8 +30,8 @@ module.exports = [
   {
       path: '/comments/remove/{recipeId}/{commentId}',
       method: 'DELETE',
+      handler: CommentController.remove,
       config: {
-          handler: CommentController.remove,
           cors: { origin: ['*'], credentials: true},
           tags: ['api','Comments'],
           description:'Delete comment',

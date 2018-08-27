@@ -11,6 +11,7 @@ module.exports = {
         })
 
     },
+    
     validate(decodedToken, request, callback) {
         User.findOne({
             _id: decodedToken._id,
