@@ -1,0 +1,38 @@
+{"_id":{"$oid":"5b773b473d1b92546e1c25ac"},"amount":{"$numberInt":"0"},"name":"Black Pepper","unit":"tsp","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b773b5a3d1b92546e1c25ad"},"amount":{"$numberInt":"0"},"name":"Salt","unit":"tsp","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b773b863d1b92546e1c25ae"},"amount":{"$numberInt":"0"},"name":"Water","unit":"fl oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b773b8c3d1b92546e1c25af"},"amount":{"$numberInt":"0"},"name":"Milk","unit":"fl oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7745073d1b92546e1c25b0"},"amount":{"$numberInt":"0"},"name":"Chicken Breast","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b784be0e28c5570cdbc18e5"},"amount":{"$numberInt":"0"},"name":"Heavy Cream","unit":"tbsp","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b785b79e28c5570cdbc18e7"},"amount":{"$numberInt":"0"},"name":"All Purpose Flour","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b79d3275159deb3d3584497"},"amount":{"$numberInt":"0"},"name":"Beef","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7ae686df2d91bdb4ac6957"},"amount":{"$numberInt":"0"},"name":"Tortillas - flour","unit":"each","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7ae6dbdf2d91bdb4ac6959"},"amount":{"$numberInt":"0"},"name":"BBQ sauce","unit":"fl oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7ae7f9df2d91bdb4ac695c"},"amount":{"$numberInt":"0"},"name":"Onion - red","unit":"each","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7ae81ddf2d91bdb4ac695e"},"amount":{"$numberInt":"0"},"name":"Mozzarella cheese","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7c4a0321e9d7e38bab4448"},"amount":{"$numberInt":"0"},"name":"Bread Crumbs","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7c817932f55f019713b1b1"},"amount":{"$numberInt":"0"},"name":"Baby Back Ribs","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7e2912d8fa7a3917da319e"},"amount":{"$numberInt":"0"},"name":"Sour Cream","unit":"fl oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b842fa74b693703ef42433f"},"amount":{"$numberInt":"0"},"name":"Elbow Macaroni","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b842fbd4b693703ef424340"},"amount":{"$numberInt":"0"},"name":"Milk - Evaporated","unit":"fl oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b842fd84b693703ef424341"},"amount":{"$numberInt":"0"},"name":"Cheddar Cheese","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8434434b693703ef42434a"},"amount":{"$numberInt":"0"},"name":"Pasta - dry","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8434554b693703ef42434b"},"amount":{"$numberInt":"0"},"name":"Garlic - clove","unit":"each","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84348d4b693703ef42434c"},"amount":{"$numberInt":"0"},"name":"Olive Oil - Extra Virgin","unit":"tbsp","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84349c4b693703ef42434d"},"amount":{"$numberInt":"0"},"name":"Tomatoes - Cherry","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8434be4b693703ef42434e"},"amount":{"$numberInt":"0"},"name":"Basil - fresh leaves","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8434d24b693703ef42434f"},"amount":{"$numberInt":"0"},"name":"Parmesan Cheese","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8434f44b693703ef424351"},"amount":{"$numberInt":"0"},"name":"Salt - Kosher","unit":"tsp","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84391d4b693703ef42435b"},"amount":{"$numberInt":"0"},"name":"Hamburger Bun","unit":"each","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84393f4b693703ef42435c"},"amount":{"$numberInt":"0"},"name":"Beef - ground","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8439674b693703ef42435d"},"amount":{"$numberInt":"0"},"name":"American Cheese - slice","unit":"each","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84441b4b693703ef42436b"},"amount":{"$numberInt":"0"},"name":"Marinara Sauce","unit":"fl oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84460d4b693703ef42436e"},"amount":{"$numberInt":"0"},"name":"Egg - whole","unit":"each","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84467d4b693703ef424374"},"amount":{"$numberInt":"0"},"name":"Tomato - whole","unit":"each","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84469e4b693703ef424376"},"amount":{"$numberInt":"0"},"name":"Spinach - whole leaf","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8447544b693703ef424379"},"amount":{"$numberInt":"0"},"name":"Bacon - strips","unit":"each","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8448ee4b693703ef424382"},"amount":{"$numberInt":"0"},"name":"Butter","unit":"tbsp","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8497de526e260f7d949ad5"},"amount":{"$numberInt":"0"},"name":"Paprika - smoked","unit":"tsp","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b849866526e260f7d949ad7"},"amount":{"$numberInt":"0"},"name":"Pork Shoulder","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84989e526e260f7d949adb"},"amount":{"$numberInt":"0"},"name":"Sugar - brown","unit":"oz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b84b08bcc4eba12640f446d"},"amount":{"$numberInt":"0"},"name":"Pecorino Romano Cheese","unit":"oz","__v":{"$numberInt":"0"}}

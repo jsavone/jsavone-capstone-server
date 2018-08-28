@@ -1,0 +1,9 @@
+{"_id":{"$oid":"5b770a95e1939550bf7b0123"},"category":"Breakfast","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b770a9be1939550bf7b0124"},"category":"Lunch","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b770a9ee1939550bf7b0125"},"category":"Dinner","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b78487ce28c5570cdbc18e3"},"category":"Chicken","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b78e7eeff09d099307e869e"},"category":"Beef","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b79d3705159deb3d358449a"},"category":"Crockpot","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8432c94b693703ef424348"},"category":"Quick Meals","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8437a94b693703ef424359"},"category":"Vegetarian","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b8440974b693703ef424369"},"category":"Pork","__v":{"$numberInt":"0"}}
