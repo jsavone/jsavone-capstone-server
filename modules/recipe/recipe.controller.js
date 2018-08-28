@@ -9,7 +9,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
-              .populate('comments')
+
             return reply.response(recipes);
         }
         catch(err){
@@ -32,7 +32,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
-              .populate('comments')
+
             return reply.response(recipeList)
         }
         catch (err) {
@@ -70,7 +70,6 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
-              .populate('comments')
 
             return reply.response(recipeList)
         }
@@ -93,7 +92,6 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
-              .populate('comments')
 
             return reply.response(recipes)
             }
@@ -115,7 +113,6 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
-              .populate('comments')
 
             return reply.response(recipes)
             }
@@ -142,7 +139,7 @@ module.exports = {
                 .populate('comments')
                 .populate('ingredients.ingredientId')
                 .populate('categories')
-                .populate('comments')
+
               return reply.response(recipes)
             }
 
@@ -166,8 +163,7 @@ module.exports = {
               .populate('comments')
               .populate('ingredients.ingredientId')
               .populate('categories')
-              .populate('comments')
-              
+
             return reply.response(recipes)
             }
 

@@ -47,12 +47,10 @@ module.exports = {
             _recipe.comments = [...filteredRecipe];
             await _recipe.save();
 
-            let recipes = await Recipe.find({})
-              .populate('comments')
-              .populate('ingredients.ingredientId')
-              .populate('categories')
-              .populate('comments')
-            return reply.response(recipes)
+            let comments = await Comment.find({})
+              .populate('recipe')
+              .populate('user')
+            return reply.response(comments)
         }
         catch (err) {
             throw err;
