@@ -1,10 +1,10 @@
 const hapi = require('hapi');
-const server = new hapi.Server();
+const server = new hapi.Server(+process.env.PORT, '0.0.0.0');
 const plugins = require('./config/plugins');
 const JwtService = require('./services/jwt.service');
 const config = require('./config/development');
 
-server.connection({host: config.host, port: config.port});
+server.connection();
 
 server.register(plugins, (err) => {
 
