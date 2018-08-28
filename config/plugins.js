@@ -41,7 +41,7 @@ module.exports = [
     {
         register: MongoosePlugin,
         options: {
-            mongoDbUri: 'mongodb://jsavone:galvanize1@ds137102.mlab.com:37102/preptastic'
+            mongoDbUri: 'mongodb://127.0.0.1/preptastic'
         }
     },
     Inert,
