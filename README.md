@@ -6,6 +6,7 @@ The front end for this app can be cloned from [HERE](https://github.com/jsavone/
 
 This is the server. To install:
 
+- MongoDB must be installed. [CLICK HERE](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition) to download.
 - npm install
 - in the root directory of the project, run **sh seed_db.sh** to seed the database
 
